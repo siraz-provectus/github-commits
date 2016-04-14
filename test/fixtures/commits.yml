@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  create_date: 2016-04-14 22:26:58
+  user_id: 1
+  hash: MyString
+  description: MyString
+
+two:
+  create_date: 2016-04-14 22:26:58
+  user_id: 1
+  hash: MyString
+  description: MyString
