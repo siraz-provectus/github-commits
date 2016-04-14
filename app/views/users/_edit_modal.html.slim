@@ -1,0 +1,18 @@
+.modal-dialog.modal-sm
+  .modal-content
+    .modal-header
+      button{type="button" class="close" data-dismiss="modal" aria-hidden="true"}
+        | &times;
+      h4
+        | Edit User
+    .modal-body
+      .row
+        .col-lg-12
+          h4
+            | Информация о пользователе
+          = form_for user, remote: true do |f|
+            .form-group
+              = f.text_field :name, class: 'form-control'
+
+            .form-actions
+              = f.submit 'Update', class: "pull-right btn btn-primary"

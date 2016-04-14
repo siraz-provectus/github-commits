@@ -1,0 +1,12 @@
+.jumbotron
+  h2
+  	| Для получения списка коммитов введите имя пользователя GitHub и название репозитория
+
+  .form
+    = form_tag upload_commits_url, method: :post, html: { class: 'navbar-form navbar-left'}
+      .col-xs-2.col-md-2
+        = text_field_tag 'username', nil, placeholder: "GitHub username", class: 'form-control'
+      .col-xs-2.col-md-2
+        = text_field_tag 'repo', nil, placeholder: "repository", class: 'form-control'
+      .col-xs-3.col-md-3
+        = submit_tag 'Выгрузить', class: 'button btn btn-default'

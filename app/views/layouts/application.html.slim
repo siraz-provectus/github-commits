@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= content_for?(:title) ? yield(:title) : 'GithubCommits'
+    = stylesheet_link_tag "application", media: "all"
+    = csrf_meta_tags
+    = javascript_include_tag 'application', media: 'all'
+    = javascript_tag "$(function() { #{yield(:javascript_code)} });" if content_for? :javascript_code
+
+  body
+  	.nav.navbar.navbar-inverse.navbar-static-top{role="navigation"}
+  		.container
+  			= render 'layout_components/header'
+    .container
+      = render 'layout_components/flash_messages'
+      = render 'layout_components/header_message'
+      = yield
+      .footer
+        p © GithubCommits 2016

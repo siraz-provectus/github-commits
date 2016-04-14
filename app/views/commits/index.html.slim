@@ -1,0 +1,20 @@
+.row
+  .col-lg-12
+    .panel.panel-default
+      .panel-body
+        .row
+          = form_tag commits_url, method: :get, html: { class: 'navbar-form navbar-left'}
+            .col-xs-1.col-md-1
+              p
+                | Email
+            .col-xs-2.col-md-2
+              = text_field_tag 'email', nil, placeholder: "Search", class: 'form-control'
+
+            .col-xs-3.col-md-3
+              = submit_tag 'Фильтровать', class: 'button btn btn-default'
+.row
+  #b-feeds__container
+    = paginate commits
+    = render 'list'
+
+.modal.fade#editUser

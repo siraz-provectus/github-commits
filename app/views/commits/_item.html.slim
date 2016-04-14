@@ -1,0 +1,13 @@
+tr{class='commit_#{item.id} user_#{item.user.id}'}
+  td.hide-border.js-username
+    = item.user.name
+  td.hide-border
+    = item.user.email
+  td.hide-border
+    = item.create_date.strftime('%Y-%m-%d %H:%M:%S')
+  td.hide-border
+    = truncate(item.description, length: 30)
+  td.hide-border
+    = truncate(item.hash_commit, length: 15)
+  td.hide-border
+    = link_to 'Edit', edit_user_path(item.user), remote: true
